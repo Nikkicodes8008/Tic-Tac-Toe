@@ -19,7 +19,7 @@ do{
 std::cout<<"Enter value between [1-9]\n";
 std::cin>>value;
 }
-while((value<1 || value>9) || board[value-1]=='O');
+while((value<1 || value>9) || board[value-1]=='O'||board[value-1]=='X');
 value--;
 board[value]='X';
 }
@@ -29,7 +29,7 @@ void Computer(char board[]){
     do{
     num=rand()%9;
 }
-while((num<0 || num>8) || board[num]=='X');
+while(board[num]=='X'||board[num]=='O');
 board[num]='O';
     
 
@@ -44,7 +44,7 @@ bool is_tie(char board[]){
 }
 bool winner(char board[]){
     if(board[0]==board[1] && board[1]==board[2] && board[0]!=' ' ){
-        if(board[0]='X'){
+        if(board[0]=='X'){
             std::cout<<"Player Won";
         }
         else{
@@ -54,7 +54,7 @@ bool winner(char board[]){
     }
 
     if(board[3]==board[4] && board[4]==board[5] && board[3]!=' ' ){
-        if(board[3]='X'){
+        if(board[3]=='X'){
             std::cout<<"Player Won";
         }
         else{
@@ -64,7 +64,7 @@ bool winner(char board[]){
     }
 
     if(board[6]==board[7] && board[7]==board[8] && board[6]!=' ' ){
-        if(board[6]='X'){
+        if(board[6]=='X'){
             std::cout<<"Player Won";
         }
         else{
@@ -74,7 +74,7 @@ bool winner(char board[]){
     }
 
     if(board[0]==board[3] && board[3]==board[6] && board[0]!=' ' ){
-        if(board[0]='X'){
+        if(board[0]=='X'){
             std::cout<<"Player Won";
         }
         else{
@@ -84,7 +84,7 @@ bool winner(char board[]){
     }
 
     if(board[1]==board[4] && board[4]==board[7] && board[1]!=' ' ){
-        if(board[1]='X'){
+        if(board[1]=='X'){
             std::cout<<"Player Won";
         }
         else{
@@ -94,7 +94,7 @@ bool winner(char board[]){
     }
 
     if(board[2]==board[5] && board[5]==board[8] && board[2]!=' ' ){
-        if(board[2]='X'){
+        if(board[2]=='X'){
             std::cout<<"Player Won";
         }
         else{
@@ -104,7 +104,7 @@ bool winner(char board[]){
     }
 
     if(board[0]==board[4] && board[4]==board[8] && board[0]!=' ' ){
-        if(board[0]='X'){
+        if(board[0]=='X'){
             std::cout<<"Player Won";
         }
         else{
@@ -114,7 +114,7 @@ bool winner(char board[]){
     }
 
     if(board[2]==board[4] && board[4]==board[6] && board[2]!=' ' ){
-        if(board[2]='X'){
+        if(board[2]=='X'){
             std::cout<<"Player Won";
         }
         else{
